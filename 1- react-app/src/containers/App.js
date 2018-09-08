@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from '../components/Persons/Person/Person';
 import ColorPicker from '../components/ColorPicker/ColorPicker';
-import ErrorBoundery from '../components/ErrorBoundery/ErrorBoundery'
+import Persons from '../components/Persons/Persons';
 
-const App2 = (props) => {
-  return (
-    <div>
-      {props}
-    </div>
-  )
-}
 
 class App extends Component {
 
@@ -75,16 +67,9 @@ class App extends Component {
         <ColorPicker click={this.changeColor} />
         {this.state.showPersons ?
           <div>
-            {this.state.persons.map((person, index) => {
-              const hexColor = this.randomColor();
-              return <ErrorBoundery><Person
-                color={hexColor}
-                click={() => this.deletePersonHandler(index)}
-                key={person.id}
-                name={person.name}
-                age={person.age} />
-              </ErrorBoundery>
-            })}
+            <Persons persons={this.state.persons}
+              clicked={this.deletePersonHandler}
+              randomColor={this.randomColor} />
           </div> : null
         }
       </div>
