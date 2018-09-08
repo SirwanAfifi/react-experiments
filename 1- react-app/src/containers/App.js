@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person';
-import ColorPicker from './ColorPicker/ColorPicker';
-import ErrorBoundery from './ErrorBoundery/ErrorBoundery'
+import Person from '../components/Persons/Person/Person';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
+import ErrorBoundery from '../components/ErrorBoundery/ErrorBoundery'
 
 const App2 = (props) => {
   return (
