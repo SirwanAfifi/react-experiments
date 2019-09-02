@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TodoBanner } from "./TodoBanner";
 import { TodoCreator } from "./TodoCreator";
 import { TodoRow } from "./TodoRow";
-
+import { VisibilityControl } from "./VisibilityControl";
 export default class App extends Component {
 
   constructor(props) {
@@ -12,7 +12,8 @@ export default class App extends Component {
       todoItems: [{ action: "Buy Flowers", done: false },
       { action: "Get Shoes", done: false },
       { action: "Collect Tickets", done: true },
-      { action: "Call Joe", done: false }]
+      { action: "Call Joe", done: false }],
+      showCompleted: true
     }
   }
 
@@ -29,8 +30,9 @@ export default class App extends Component {
       this.state.todoItems.map(item => item.action === todo.action
         ? { ...item, done: !item.done } : item)
   });
-  todoTableRows = () => this.state.todoItems.map(item =>
-    <TodoRow key={item.action} item={item} callback={this.toggleTodo} />)
+  todoTableRows = (doneValue) => this.state.todoItems
+    .filter(item => item.done === doneValue).map(item =>
+      <TodoRow key={item.action} item={item} callback={this.toggleTodo} />)
 
   render = () => <div>
     <TodoBanner username={this.state.username} todoItems={this.state.todoItems} />
@@ -40,8 +42,22 @@ export default class App extends Component {
         <thead>
           <tr><th>Description</th><th>Done</th></tr>
         </thead>
-        <tbody>{this.todoTableRows()}</tbody>
+        <tbody>{this.todoTableRows(false)}</tbody>
       </table>
+      <div className="bg-secondary text-white text-center p-2">
+        <VisibilityControl description="Completed Tasks"
+          isChecked={this.state.showCompleted}
+          callback={(checked) =>
+            this.setState({ showCompleted: checked })} />
+      </div>
+      {this.state.showCompleted &&
+        <table className="table table-striped table-bordered">
+          <thead>
+            <tr><th>Description</th><th>Done</th></tr>
+          </thead>
+          <tbody>{this.todoTableRows(true)}</tbody>
+        </table>
+      }
     </div>
   </div>
 }
