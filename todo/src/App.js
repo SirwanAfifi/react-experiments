@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 export default class App extends Component {
   render() {
     return (
-      <h1 className="bg-primary text-white text-center p-2">
+      <h4 className="bg-primary text-white text-center p-2">
         To Do List
-      </h1>
+      </h4>
     );
   }
 }
