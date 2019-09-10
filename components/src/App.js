@@ -8,10 +8,7 @@ export default () => {
       <h1 className="bg-primary text-white text-center p-2">
         Hello Sirwan
     </h1>
-      <Message greeting="Hello" name="Sirwan" />
-      <Message greeting="Hello" name="Behzad" />
-      <Message greeting="Hello" name="Shaho" />
-      <Summary />
+      <Summary names={["Sirwan", "Behzad", "Shaho"]} />
     </div>
   )
 }
