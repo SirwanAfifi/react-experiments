@@ -1,14 +1,27 @@
 import React from 'react';
-import { Message } from './Message';
-import { Summary } from './Summary';
+import { Summary } from "./Summary";
+
+let names = ["Sirwan", "Behzad", "Shaho"];
 
 export default () => {
   return (
-    <div>
-      <h1 className="bg-primary text-white text-center p-2">
-        Hello Sirwan
-    </h1>
-      <Summary names={["Sirwan", "Behzad", "Shaho"]} />
-    </div>
+    <table className="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Letters</th>
+        </tr>
+      </thead>
+      <tbody>
+        {names.map((name, index) => {
+          return (
+            <tr>
+              <Summary index={index} name={name} />
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
   )
 }
