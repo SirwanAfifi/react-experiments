@@ -11,6 +11,10 @@ export function Summary(props) {
 					onClick={props.reverseCallback}>
 					Change
 				</button>
+				<button className="btn btn-info btn-sm m-1"
+					onClick={() => props.promoteCallback(props.name)}>
+					Promote
+                </button>
 			</td>
 		</>
 	}
