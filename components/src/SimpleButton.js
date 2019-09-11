@@ -21,11 +21,14 @@ export class SimpleButton extends Component {
 	}
 
 	handleClick = () => {
+		for (let i = 0; i < 5; i++) {
+			this.setState((state, props) => {
+				return { counter: state.counter + 1 }
+			});
+		}
 		this.setState({
-			counter: this.state.counter + 1
-		}, () => this.setState({
-			hasButtonBeenClicked: this.state.counter > 0
-		}));
+			hasButtonBeenClicked: true
+		});
 		this.props.callback();
 	}
 }
