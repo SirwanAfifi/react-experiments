@@ -10,7 +10,8 @@ export function Summary(props) {
 			<td>
 				<CallbackButton callback={props.reverseCallback} />
 				<CallbackButton theme="info" text="Promote"
-					callback={() => props.promoteCallback(props.name)} />
+					callback={() => props.promoteCallback(props.name)}
+					disabled={true} />
 			</td>
 		</>
 	}
