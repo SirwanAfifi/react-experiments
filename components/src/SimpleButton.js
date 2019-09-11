@@ -1,20 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
 
-export function SimpleButton(props) {
-    return (
-        <button onClick={props.callback} className={props.className}>
-            {props.text}
-        </button>)
-}
-
-SimpleButton.defualtProps = {
-    disabled: false
-};
-
-SimpleButton.propTypes = {
-    text: PropTypes.string,
-    theme: PropTypes.string,
-    callback: PropTypes.func,
-    disabled: PropTypes.bool
+export class SimpleButton extends Component {
+	render = () => {
+		return (
+			<button onClick={this.props.callback}
+				className={this.props.className}>
+				{this.props.text}
+			</button>)
+	}
 }
