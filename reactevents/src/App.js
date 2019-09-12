@@ -5,24 +5,32 @@ export default class App extends Component {
 		super(props);
 		this.state = {
 			message: "Ready",
-			counter: 0
+			counter: 0,
+			theme: "secondary"
 		};
 	}
 
-	handleEvent = (event) => {
+	handleEvent = (event, newTheme) => {
 		event.persist();
-		this.setState({ counter: this.state.counter + 1 },
+		this.setState({
+			counter: this.state.counter + 1,
+			theme: newTheme
+		},
 			() => this.setState({ message: `${event.type}: ${this.state.counter}` }));
 	}
 
 	render = () => {
 		return <div className="m-2">
-			<div className="h4 bg-primary text-white text-center p-2">
+			<div className={`h4 bg-${this.state.theme} text-white text-center p-2`}>
 				{this.state.message}
 			</div>
 			<div className="text-center">
 				<button className="btn btn-primary"
-					onClick={this.handleEvent}>Click</button>
+					onClick={(e) => this.handleEvent(e, "primary")}>Normal
+				</button>
+				<button className="btn btn-danger m-1"
+					onClick={(e) => this.handleEvent(e, "danger")}>Danger
+				</button>
 			</div>
 		</div>
 	}
