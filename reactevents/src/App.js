@@ -8,8 +8,12 @@ export default class App extends Component {
 		};
 	}
 
-	handleEvent = () => {
-		this.setState({ message: "Clicked!" });
+	handleEvent = (event) => {
+		if (event.type === "mousedown") {
+			this.setState({ message: "Down" });
+		} else {
+			this.setState({ message: "Up" });
+		}
 	}
 
 	render = () => {
@@ -19,7 +23,8 @@ export default class App extends Component {
 			</div>
 			<div className="text-center">
 				<button className="btn btn-primary"
-					onClick={this.handleEvent}>Click</button>
+					onMouseDown={this.handleEvent}
+					onMouseUp={this.handleEvent}>Click</button>
 			</div>
 		</div>
 	}
