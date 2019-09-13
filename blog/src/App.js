@@ -16,12 +16,7 @@ export default class App extends Component {
         <div className="container">
           <div className="columns">
             <div className="column is-8">
-              <List posts={[
-                { title: "Post1", body: "Hello" },
-                { title: "Post2", body: "Hello" },
-                { title: "Post3", body: "Hello" },
-                { title: "Post4", body: "Hello" }
-              ]} />
+              <List />
             </div>
             <div className="column is-4">
               <AuthorList />
