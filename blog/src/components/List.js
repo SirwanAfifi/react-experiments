@@ -10,12 +10,20 @@ export class List extends Component {
                 { title: "Post2", body: "Hello" },
                 { title: "Post3", body: "Hello" },
                 { title: "Post4", body: "Hello" }
-            ]
+            ],
+            showSpan: false
         }
     }
 
     sort = () => {
-        this.setState({ posts: this.state.posts.reverse() })
+        this.setState({ posts: this.state.posts.reverse(), showSpan: true })
+    }
+
+    getMessageElement() {
+        let div = <div id="boxDiv" className="box">
+            Hello
+        </div>
+        return this.state.showSpan ? <>{div}</> : div;
     }
 
     render() {
@@ -24,6 +32,7 @@ export class List extends Component {
             <div className="box">
                 <ActionButton text="Sort" callback={this.sort} />
             </div>
+            {this.getMessageElement()}
             {this.state.posts.map((post, index) => {
                 return <Post post={post} key={index} />
             })}
