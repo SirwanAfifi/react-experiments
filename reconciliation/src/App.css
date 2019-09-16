@@ -3,7 +3,29 @@
 }
 
 .message {
-  background: green;
+  border: 1px solid green;
   padding: 2rem;
+}
+
+.list-container {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.list-container button {
+  widows: 200px;
+  background-color: rgb(43, 132, 135);
+  padding: 1rem;
+  cursor: pointer;
   color: white;
+  font-weight: bold;
+}
+
+#list {
+  list-style: none;
+  padding: 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
 }
