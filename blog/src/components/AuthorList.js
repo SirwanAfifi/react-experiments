@@ -5,8 +5,8 @@ export class AuthorList extends Component {
         return <>
             <h1 className="title">Authors</h1>
             <ul className="list">
-                {[{ title: "Vahid Nasiri" }, { title: "Sirwan Afifi" }]
-                    .map((author, index) => <a href="/" className="list-item" key={index}>{author.title}</a>
+                {[{ fullName: "Vahid Nasiri" }, { fullName: "Sirwan Afifi" }]
+                    .map((author, index) => <a href="/" className="list-item" key={index}>{author.fullName}</a>
                     )}
             </ul>
         </>
