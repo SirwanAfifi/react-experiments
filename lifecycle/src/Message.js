@@ -20,6 +20,11 @@ export class Message extends Component {
     }
 
 
+
+    componentDidUpdate() {
+        console.log("componentDidUpdate Message Component")
+    }
+
     render() {
         return <div>
             <ActionButton theme="primary" {...this.props}
