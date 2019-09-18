@@ -25,6 +25,10 @@ export class Message extends Component {
         console.log("componentDidUpdate Message Component")
     }
 
+    componentWillUnmount() {
+        console.log("componentWillUnmount Message Component");
+    }
+
     render() {
         return <div>
             <ActionButton theme="primary" {...this.props}
