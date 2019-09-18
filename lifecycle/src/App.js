@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Message } from "./Message";
 import { List } from "./List";
+import { HooksMessage } from "./HooksMessage";
 
 export default class App extends Component {
   constructor(props) {
@@ -30,9 +31,15 @@ export default class App extends Component {
               onChange={this.handleChange} />
             <label className="form-check-label">Show</label>
           </div>
-          {this.state.showMessage && <Message message={`Counter: ${this.state.counter}`}
-            callback={this.incrementCounter}
-            text="Increment Counter" />}
+          {this.state.showMessage && <div>
+            <Message message={`Counter: ${this.state.counter}`}
+              callback={this.incrementCounter}
+              text="Increment Counter" />
+            <HooksMessage
+              message={`Counter: ${this.state.counter}`}
+              callback={this.incrementCounter}
+              text="Increment Counter" />
+          </div>}
         </div>
         <div className="col-4">
           <List />
