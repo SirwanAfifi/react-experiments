@@ -45,7 +45,14 @@ export default class App extends Component {
 					</div>
 					<div className="col-6">
 						<ProFeature pro={this.state.proMode}
-							render={() => <SortedList list={this.state.names} />}
+							render={(title) => {
+								return (
+									<div>
+										<h1>{title}</h1>
+										<SortedList list={this.state.names} />
+									</div>
+								)
+							}}
 						/>
 					</div>
 				</div>
