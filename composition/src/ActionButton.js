@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { ProModeContext } from "./ProModeContext";
 export class ActionButton extends Component {
 	render() {
 		return (
-			<button className={this.getClasses(this.props.proMode)}
-				disabled={!this.props.propMode}
-				onClick={this.props.callback}>
-				{this.props.text}
-			</button>
+			<ProModeContext>
+				{contextData =>
+					<button className={this.getClasses(contextData.proMode)}
+						disabled={!contextData.propMode}
+						onClick={this.props.callback}>
+						{this.props.text}
+					</button>}
+			</ProModeContext>
 		);
 	}
 

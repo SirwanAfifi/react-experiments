@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 //import { ThemeSelector } from './ThemeSelector';
 import { GeneralList } from './GeneralList';
 import { SortedList } from "./SortedList";
-import { ProFeature } from "./ProFeature";
+//import { ProFeature } from "./ProFeature";
 //import { ProController } from "./ProController";
 // const ProList = ProController(SortedList);
+import { ProModeContext } from "./ProModeContext";
 export default class App extends Component {
 	constructor(props) {
 		super(props);
@@ -14,12 +15,14 @@ export default class App extends Component {
 			// counter: 0
 			names: ["Zoe", "Bob", "Alice", "Dora", "Joe"],
 			cities: ["London", "New York", "Paris", "Milan", "Boston"],
-			proMode: false
+			proContextData: {
+				proMode: false
+			}
 		};
 	}
 
 	toggleProMode = () => {
-		this.setState({ proMode: !this.state.proMode });
+		this.setState(state => state.proContextData.proMode = !state.proContextData.proMode);
 	}
 	// incrementCounter = () => {
 	//   this.setState({ counter: this.state.counter + 1 });
@@ -32,7 +35,7 @@ export default class App extends Component {
 					<div className="col-12 text-center p-2">
 						<div className="form-check">
 							<input type="checkbox" className="form-check-input"
-								value={this.state.proMode}
+								value={this.state.proContextData.proMode}
 								onChange={this.toggleProMode} />
 							<label className="form-check-label">Pro Mode</label>
 						</div>
@@ -44,16 +47,9 @@ export default class App extends Component {
 							theme="primary" />
 					</div>
 					<div className="col-6">
-						<ProFeature pro={this.state.proMode}
-							render={(title) => {
-								return (
-									<div>
-										<h1>{title}</h1>
-										<SortedList list={this.state.names} />
-									</div>
-								)
-							}}
-						/>
+						<ProModeContext.Provider value={this.state.proContextData}>
+							<SortedList list={this.state.names} />
+						</ProModeContext.Provider>
 					</div>
 				</div>
 			</div>
