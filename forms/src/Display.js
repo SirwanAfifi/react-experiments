@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 export class Display extends Component {
 
-    formValue = (data) => Array.isArray(data)
+    formatValue = (data) => Array.isArray(data)
         ? data.join(", ") : data.toString();
 
     render() {
         let keys = Object.keys(this.props.data);
+        console.log(this.props.data)
         if (keys.length === 0) {
             return <h5 className="h5 bg-secondary p-2 text-white">
                 No Data
