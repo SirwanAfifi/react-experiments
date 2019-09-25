@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Editor } from './Editor';
+import { Display } from './Display';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {}
+    };
+  }
+
+  submitData = (newData) => {
+    this.setState({ formData: newData });
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row p-2">
+          <div className="col-6">
+            <Editor submit={this.submitData} />
+          </div>
+          <div className="col-6">
+            <Display data={this.state.formData} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
