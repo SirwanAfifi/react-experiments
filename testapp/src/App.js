@@ -9,14 +9,14 @@ export default class App extends Component {
       title: this.props.title || "Simple Addition",
       fieldValues: [],
       total: 0
-    };
+    }
   }
 
-  updateValue = (id, value) => {
+  updateFieldValue = (id, value) => {
     this.setState(state => {
       state.fieldValues[id] = Number(value);
       return state;
-    })
+    });
   }
 
   updateTotal = () => {
