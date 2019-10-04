@@ -1,9 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import Adapter from "enzyme-adapter-react-16";
+import Enzyme, { mount } from "enzyme";
 import App from './App';
+import { Header } from './components/Header';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+Enzyme.configure({ adapter: new Adapter() });
+
+it('renders app component', () => {
+  const wrapper = mount(<App />);
+  const header = <Header />;
+  expect(wrapper.contains(header)).toEqual(true);
 });
