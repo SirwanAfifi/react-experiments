@@ -8,7 +8,7 @@ export class Selector extends Component {
             selection: React.Children.toArray(props.children)[0].props.name
         }
     }
-    
+
     setSelection = (ev) => {
         ev.persist();
         this.setState({ selection: ev.target.name});
