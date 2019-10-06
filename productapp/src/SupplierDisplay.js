@@ -30,7 +30,7 @@ export const SupplierDisplay = connectFunction(
                 return <ConnectedEditor key={ this.props.selected.id || -1 } />                
             } else {
                 return <div className="m-2">
-                    <ConnectedTable />
+                    <ConnectedTable needSuppliers={ true } />
                     <div className="text-center">
                         <button className="btn btn-primary m-1" 
                             onClick={ this.props.createSupplier }>
