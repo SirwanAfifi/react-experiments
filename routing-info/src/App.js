@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch }
+import { BrowserRouter as Router, Route, Switch, Prompt }
   from "react-router-dom";
 import { RouteInfo } from "./RouteInfo";
 import { ToggleLink } from "./ToggleLink";
@@ -18,6 +18,8 @@ export default class App extends Component {
             </div>
             <div className="col">
               <Switch>
+                <Prompt message={loc =>
+                  `Do you want to navigate to ${loc.pathname}`} />
                 <Route path="/info/:datatype?" component={RouteInfo} />
               </Switch>
             </div>
