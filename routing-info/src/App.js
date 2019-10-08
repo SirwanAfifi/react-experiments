@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, NavLink, Route, Switch }
+import { BrowserRouter as Router, Route, Switch }
   from "react-router-dom";
 import { RouteInfo } from "./RouteInfo";
-
+import { ToggleLink } from "./ToggleLink";
 export default class App extends Component {
   render() {
     return (
@@ -10,8 +10,11 @@ export default class App extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-2">
-              <NavLink className="m-2 btn btn-block btn-primary"
-                activeClassName="active" to="/info">Route Info</NavLink>
+              <ToggleLink to="/products">Products</ToggleLink>
+              <ToggleLink to="/suppliers">Suppliers</ToggleLink>
+              <ToggleLink to="/info/match">Match</ToggleLink>
+              <ToggleLink to="/info/location">Location</ToggleLink>
+              <ToggleLink to="/info" exact={true}>All Info</ToggleLink>
             </div>
             <div className="col">
               <Switch>
