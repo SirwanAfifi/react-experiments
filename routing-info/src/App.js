@@ -15,7 +15,7 @@ export default class App extends Component {
             </div>
             <div className="col">
               <Switch>
-                <Route path="/info" component={RouteInfo} />
+                <Route path="/info/:datatype?" component={RouteInfo} />
               </Switch>
             </div>
           </div>
