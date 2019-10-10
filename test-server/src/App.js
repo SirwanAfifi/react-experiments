@@ -1,13 +1,10 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 import { IsolatedTable } from './IsolatedTable';
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends Component {
+  render() {
+    return (
       <IsolatedTable />
-    </div>
-  );
+    );
+  }
 }
-
-export default App;
