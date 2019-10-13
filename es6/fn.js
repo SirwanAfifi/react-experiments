@@ -38,6 +38,19 @@
 // console.log(string);
 // console.log(urlFriendly);
 
-const string = "This is the mid day show with Cheryl Waters";
-const urlFriendly = string.replace(/ /g, "-");
-console.log(urlFriendly);
+// const string = "This is the mid day show with Cheryl Waters";
+// const urlFriendly = string.replace(/ /g, "-");
+// console.log(urlFriendly);
+
+const loadAndMapMembers = compose(
+	combineWith(sessionStorage, "members"),
+	save(sessionStorage, "members"),
+	scopeMembers(window),
+	logMemberInfoToConsole,
+	logFieldsToConsole("name.first"),
+	countMembersBy("location.state"),
+	prepStatesForMapping,
+	save(sessionStorage, "map"),
+	renderUSMap
+);
+getFakeMembers(100).then(loadAndMapMembers);
