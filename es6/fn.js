@@ -55,12 +55,24 @@
 // );
 // getFakeMembers(100).then(loadAndMapMembers);
 
-var target = document.getElementById('target');
-var wrapper = document.createElement('div');
-var headline = document.createElement('h1');
+// var target = document.getElementById('target');
+// var wrapper = document.createElement('div');
+// var headline = document.createElement('h1');
 
-wrapper.id = "welcome";
-headline.innerText = "Hello World";
+// wrapper.id = "welcome";
+// headline.innerText = "Hello World";
 
-wrapper.appendChild(headline);
-target.appendChild(wrapper);
+// wrapper.appendChild(headline);
+// target.appendChild(wrapper);
+
+const { render } = ReactDOM;
+
+const Welcome = () => (<div id="welcome">
+	<h1>Hello World</h1>
+</div>
+)
+
+render(
+	<Welcome />,
+	document.getElementById('target')
+)
