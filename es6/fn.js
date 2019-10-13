@@ -13,11 +13,13 @@
 
 // obj.log(obj.message)
 
-const messages = [
-    "They can be inserted into arrays",
-    message => console.log(message),
-    "like variables",
-    message => console.log(message)
-];
+// const messages = [
+//     "They can be inserted into arrays",
+//     message => console.log(message),
+//     "like variables",
+//     message => console.log(message)
+// ];
 
-messages[1](messages[0]) // They can be inserted into arrays messages[3](messages[2]) // like variables
+// messages[1](messages[0]) // They can be inserted into arrays messages[3](messages[2]) // like variables
+
+const createScream = logger => message => logger(message.toUpperCase() + "!!!");
