@@ -42,15 +42,25 @@
 // const urlFriendly = string.replace(/ /g, "-");
 // console.log(urlFriendly);
 
-const loadAndMapMembers = compose(
-	combineWith(sessionStorage, "members"),
-	save(sessionStorage, "members"),
-	scopeMembers(window),
-	logMemberInfoToConsole,
-	logFieldsToConsole("name.first"),
-	countMembersBy("location.state"),
-	prepStatesForMapping,
-	save(sessionStorage, "map"),
-	renderUSMap
-);
-getFakeMembers(100).then(loadAndMapMembers);
+// const loadAndMapMembers = compose(
+// 	combineWith(sessionStorage, "members"),
+// 	save(sessionStorage, "members"),
+// 	scopeMembers(window),
+// 	logMemberInfoToConsole,
+// 	logFieldsToConsole("name.first"),
+// 	countMembersBy("location.state"),
+// 	prepStatesForMapping,
+// 	save(sessionStorage, "map"),
+// 	renderUSMap
+// );
+// getFakeMembers(100).then(loadAndMapMembers);
+
+var target = document.getElementById('target');
+var wrapper = document.createElement('div');
+var headline = document.createElement('h1');
+
+wrapper.id = "welcome";
+headline.innerText = "Hello World";
+
+wrapper.appendChild(headline);
+target.appendChild(wrapper);
