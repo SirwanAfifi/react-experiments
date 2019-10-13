@@ -24,16 +24,20 @@
 
 // const createScream = logger => message => logger(message.toUpperCase() + "!!!");
 
-var string = "This is the midday show with Cheryl Waters";
-var urlFriendly = "";
+// var string = "This is the midday show with Cheryl Waters";
+// var urlFriendly = "";
 
-for (var i = 0; i < string.length; i++) {
-	if (string[i] === " ") {
-		urlFriendly += "-";
-	} else {
-		urlFriendly += string[i];
-	}
-}
+// for (var i = 0; i < string.length; i++) {
+// 	if (string[i] === " ") {
+// 		urlFriendly += "-";
+// 	} else {
+// 		urlFriendly += string[i];
+// 	}
+// }
 
-console.log(string);
+// console.log(string);
+// console.log(urlFriendly);
+
+const string = "This is the mid day show with Cheryl Waters";
+const urlFriendly = string.replace(/ /g, "-");
 console.log(urlFriendly);
