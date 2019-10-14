@@ -85,9 +85,8 @@ let color_lawn = {
 };
 
 function rateColor(color, rating) {
-	color.rating = rating;
-	return color;
+	return Object.assign({}, color, { rating: rating });
 }
 
 console.log(rateColor(color, 5).rating); // 5
-console.log(color.rating); 				// 5
+console.log(color.rating); 				// 4
