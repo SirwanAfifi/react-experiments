@@ -1,92 +1,11 @@
-// var log = function (message) {
-//     console.log(message);
-// }
+let list = [
+	{ title: "Rad Red" },
+	{ title: "Lawn" },
+	{ title: "Party Pink" }
+];
 
-// var log = message => console.log(message);
+// const addColor = (title, array) => array.concat({title})
+const addColor = (title, list) => [...list, { title }];
 
-// const obj = {
-//     message: "They can be added to objects like variables",
-//     log(message) {
-//         console.log(message)
-//     }
-// };
-
-// obj.log(obj.message)
-
-// const messages = [
-//     "They can be inserted into arrays",
-//     message => console.log(message),
-//     "like variables",
-//     message => console.log(message)
-// ];
-
-// messages[1](messages[0]) // They can be inserted into arrays messages[3](messages[2]) // like variables
-
-// const createScream = logger => message => logger(message.toUpperCase() + "!!!");
-
-// var string = "This is the midday show with Cheryl Waters";
-// var urlFriendly = "";
-
-// for (var i = 0; i < string.length; i++) {
-// 	if (string[i] === " ") {
-// 		urlFriendly += "-";
-// 	} else {
-// 		urlFriendly += string[i];
-// 	}
-// }
-
-// console.log(string);
-// console.log(urlFriendly);
-
-// const string = "This is the mid day show with Cheryl Waters";
-// const urlFriendly = string.replace(/ /g, "-");
-// console.log(urlFriendly);
-
-// const loadAndMapMembers = compose(
-// 	combineWith(sessionStorage, "members"),
-// 	save(sessionStorage, "members"),
-// 	scopeMembers(window),
-// 	logMemberInfoToConsole,
-// 	logFieldsToConsole("name.first"),
-// 	countMembersBy("location.state"),
-// 	prepStatesForMapping,
-// 	save(sessionStorage, "map"),
-// 	renderUSMap
-// );
-// getFakeMembers(100).then(loadAndMapMembers);
-
-// var target = document.getElementById('target');
-// var wrapper = document.createElement('div');
-// var headline = document.createElement('h1');
-
-// wrapper.id = "welcome";
-// headline.innerText = "Hello World";
-
-// wrapper.appendChild(headline);
-// target.appendChild(wrapper);
-
-// const { render } = ReactDOM;
-
-// const Welcome = () => (<div id="welcome">
-// 	<h1>Hello World</h1>
-// </div>
-// )
-
-// render(
-// 	<Welcome />,
-// 	document.getElementById('target')
-// )
-
-// Imutability
-let color_lawn = {
-	title: "lawn",
-	color: "#00FF00",
-	rating: 0
-};
-
-function rateColor(color, rating) {
-	return Object.assign({}, color, { rating: rating });
-}
-
-console.log(rateColor(color, 5).rating); // 5
-console.log(color.rating); 				// 4
+console.log(addColor("Glam Green", list).length);
+console.log(list.length);
