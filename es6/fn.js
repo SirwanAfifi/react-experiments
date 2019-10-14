@@ -1,11 +1,17 @@
-let list = [
-	{ title: "Rad Red" },
-	{ title: "Lawn" },
-	{ title: "Party Pink" }
-];
+const sirwan = {
+	name: "Sirwan Afifi",
+	canRead: false,
+	canWrite: false
+};
 
-// const addColor = (title, array) => array.concat({title})
-const addColor = (title, list) => [...list, { title }];
+const selfEducate = person => ({
+	...sirwan,
+	canRead: true,
+	canWrite: true
+});
 
-console.log(addColor("Glam Green", list).length);
-console.log(list.length);
+console.log(selfEducate(sirwan));
+console.log(sirwan);
+
+// {name: "Sirwan Afifi", canRead: true, canWrite: true}
+// {name: "Sirwan Afifi", canRead: false, canWrite: false}
