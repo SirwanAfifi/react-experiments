@@ -65,14 +65,29 @@
 // wrapper.appendChild(headline);
 // target.appendChild(wrapper);
 
-const { render } = ReactDOM;
+// const { render } = ReactDOM;
 
-const Welcome = () => (<div id="welcome">
-	<h1>Hello World</h1>
-</div>
-)
+// const Welcome = () => (<div id="welcome">
+// 	<h1>Hello World</h1>
+// </div>
+// )
 
-render(
-	<Welcome />,
-	document.getElementById('target')
-)
+// render(
+// 	<Welcome />,
+// 	document.getElementById('target')
+// )
+
+// Imutability
+let color_lawn = {
+	title: "lawn",
+	color: "#00FF00",
+	rating: 0
+};
+
+function rateColor(color, rating) {
+	color.rating = rating;
+	return color;
+}
+
+console.log(rateColor(color, 5).rating); // 5
+console.log(color.rating); 				// 5
