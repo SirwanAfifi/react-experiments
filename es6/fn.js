@@ -1,32 +1,6 @@
-const colors = [
-	{
-		id: '-xekare',
-		title: "rad red",
-		rating: 3
-	},
-	{
-		id: '-jbwsof',
-		title: "big blue",
-		rating: 2
-	},
-	{
-		id: '-prigbj',
-		title: "grizzly grey",
-		rating: 5
-	},
-	{
-		id: '-ryhbhsl',
-		title: "banana",
-		rating: 1
-	}
-];
+// reduce can be used to transform an array into a value
+const arraies = [() => { console.log("Hello") }, (name) => alert(name), (itemA, itemB) => itemA * itemB];
 
-const hashColors = colors.reduce(
-	(hash, { id, title, rating }) => {
-		hash[id] = { title, rating }
-		return hash
-	},
-	{}
-);
+arraies.reduce((item) => {
 
-console.log(hashColors)
+})
