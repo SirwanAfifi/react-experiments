@@ -13,13 +13,22 @@ export default class App extends Component {
         { name: "Azad Janati", age: 39 },
         { name: "Shaho Toofani", age: 40 },
         { name: "Pooya Kolahghochi", age: 30 },
+      ],
+      sorted: [
+        { name: "Sirwan Afifi", age: 30 },
+        { name: "Hamed Ghaderi", age: 35 },
+        { name: "Sattar Menbari", age: 35 },
+        { name: "Fateh Ahmadpanah", age: 35 },
+        { name: "Azad Janati", age: 39 },
+        { name: "Shaho Toofani", age: 40 },
+        { name: "Pooya Kolahghochi", age: 30 },
       ]
     };
   }
 
   onChange = (e) => {
     if (e.target.value === "age") {
-      this.state.list.sort((userA, userB) => {
+      const sorted = [...this.state.list].sort((userA, userB) => {
         if (userB.age < userA.age) {
           return -1;
         }
@@ -28,7 +37,7 @@ export default class App extends Component {
         }
         return 0;
       })
-      this.setState({ list: this.state.list })
+      this.setState({ list: this.state.list, sorted: sorted })
     }
   }
 
@@ -44,13 +53,18 @@ export default class App extends Component {
             </select>
           </div>
           <div className="col-8 bg-secondary text-white p-3">
-            {this.state.list.map(item => <li key={item.name}>{item.name}</li>)}
+            {this.state.sorted.map(item => <li key={item.name}>{item.name}</li>)}
           </div>
         </div>
         <div className="row">
-          <div className="col-10 bg-info">
+          <div className="col-5 bg-info">
             <pre className="text-white">
               {JSON.stringify(this.state.list, null, 2)}
+            </pre>
+          </div>
+          <div className="col-5 bg-info">
+            <pre className="text-white">
+              {JSON.stringify(this.state.sorted, null, 2)}
             </pre>
           </div>
         </div>
