@@ -4,7 +4,13 @@ class Users extends React.Component {
     return (
       <ul>
         {users.map(user => (
-          <li>{user}</li>
+          <li
+            onClick={_ => {
+              alert("hello my name is " + user);
+            }}
+          >
+            {user}
+          </li>
         ))}
       </ul>
     );
