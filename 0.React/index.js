@@ -1,20 +1,34 @@
-class Users extends React.Component {
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    };
+  }
   render() {
-    var users = ["User1", "User2", "User3"];
     return (
-      <ul>
-        {users.map(user => (
-          <li
+      <div>
+        <h1>Counter App</h1>
+        <span>Value: {this.state.counter}</span>
+        <div>
+          <button
             onClick={_ => {
-              alert("hello my name is " + user);
+              this.setState({ counter: this.state.counter + 1 });
             }}
           >
-            {user}
-          </li>
-        ))}
-      </ul>
+            +
+          </button>
+          <button
+            onClick={_ => {
+              this.setState({ counter: this.state.counter - 1 });
+            }}
+          >
+            -
+          </button>
+        </div>
+      </div>
     );
   }
 }
 
-ReactDOM.render(<Users />, document.getElementById("app"));
+ReactDOM.render(<Counter />, document.getElementById("app"));
