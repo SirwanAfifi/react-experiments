@@ -1,4 +1,5 @@
 import React from 'react';
+import { StarRating } from './StarRating';
 
 export const AddColorForm = ({ onNewColor = f => f }) => {
 	let _title, _color
@@ -16,6 +17,8 @@ export const AddColorForm = ({ onNewColor = f => f }) => {
 				placeholder="color title..." required />
 			<input ref={input => _color = input}
 				type="color" required />
+
+			<StarRating totalStars={5} />
 			<button>ADD</button>
 		</form>
 	)
