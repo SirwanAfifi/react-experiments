@@ -11,6 +11,7 @@ export class StarRating extends Component {
 	}
 
 	change(starsSelected) {
+		this.props.onChange(starsSelected);
 		this.setState({ starsSelected })
 	}
 

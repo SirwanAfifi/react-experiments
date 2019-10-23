@@ -3,8 +3,8 @@ import { AddColorForm } from './AddColorForm';
 
 export default class App extends Component {
 
-  logColor = (title, color) =>
-    console.log(`New color: ${title} | ${color}`)
+  logColor = (title, color, starRating) =>
+    console.log(`New color: ${title} | ${color} | Rating: ${starRating}`)
 
   render() {
     return (
