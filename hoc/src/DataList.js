@@ -1,4 +1,6 @@
-const DataComponent = (ComposedComponent, url) =>
+import React, { Component } from 'react';
+
+export const DataComponent = (ComposedComponent, url) =>
 	class DataComponent extends Component {
 		constructor(props) {
 			super(props);
