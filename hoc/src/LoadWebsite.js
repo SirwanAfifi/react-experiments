@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const LoadWebstie = (Component) => {
+export const LoadWebstie = (Component) => {
 	class _LoadWebsite extends React.Component {
 		constructor(props) {
 			super(props);
