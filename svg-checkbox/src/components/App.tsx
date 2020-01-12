@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import Checkbox from "./Checkbox";
 
 const App = () => {
-  return <h1>Hello</h1>;
+  return (
+    <>
+      <Checkbox />
+      <Checkbox />
+      <Checkbox />
+    </>
+  );
 };
 
 export default App;
