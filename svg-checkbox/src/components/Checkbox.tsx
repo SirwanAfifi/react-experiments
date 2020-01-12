@@ -1,32 +1,29 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles/checkbox.module.css";
 
 const Checkbox = () => {
-  const [checked, setChecked] = useState(false);
+  const id = Math.random().toString();
   const [reverse, setReverse] = useState("");
+  const [checked, setChecked] = useState(false);
+
   return (
     <div className={styles.inner}>
       <input
         type="checkbox"
+        name={id}
+        id={id}
         checked={checked}
-        name="cb"
-        id="cb"
-        onClick={_ => {
+        onChange={_ => {
+          if (checked) {
+            setReverse("reverse");
+          } else {
+            setReverse("");
+          }
           setChecked(!checked);
         }}
       />
-      <label htmlFor="cb">
-        <svg
-          className={reverse}
-          viewBox="0 0 100 100"
-          onClick={_ => {
-            if (checked) {
-              setReverse("reverse");
-            } else {
-              setReverse("");
-            }
-          }}
-        >
+      <label htmlFor={id}>
+        <svg viewBox="0 0 100 100" className={reverse}>
           <path
             className={styles.box}
             d="M82.5,90.5h-66c-3.87,0-7-3.13-7-7v-66c0-3.87,3.13-7,7-7h66c3.87,0,7,3.13,7,7v66
