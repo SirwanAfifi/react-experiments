@@ -3,7 +3,7 @@ import React from "react";
 export default ({ character }) => {
   return (
     <div className="sm:w-1/4 p-2 hover:shadow cursor-pointer card">
-      <div className="bg-primary-200 px-6 py-8 rounded-lg shadow-lg text-center">
+      <div className="card-wrapper bg-primary-200 px-6 py-8 rounded-lg shadow-lg text-center hover:bg-primary-100">
         <div className="mb-3">
           <img
             className="w-auto mx-auto rounded-full"
@@ -11,7 +11,7 @@ export default ({ character }) => {
             alt=""
           />
         </div>
-        <h2 className="text-xl font-medium text-primary-300">
+        <h2 className="text-xl font-medium text-primary-400">
           {character.name}
         </h2>
         <span className="text-primary-400 block mb-5">{character.status}</span>

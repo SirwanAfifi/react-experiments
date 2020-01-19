@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.card-wrapper {
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
+
 .card {
   z-index: 0;
   position: relative;
