@@ -1,9 +1,10 @@
 import React from "react";
 
-export default () => {
+export default ({ searchChange }) => {
   return (
     <div className="w-1/2 pt-2 relative mx-auto text-primary-400">
       <input
+        onChange={searchChange}
         type="search"
         name="serch"
         placeholder="Search"

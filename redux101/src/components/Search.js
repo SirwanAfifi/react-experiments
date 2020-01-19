@@ -1,7 +1,7 @@
 import React from "react";
 import SearchField from "./SearchField";
 
-export default () => {
+export default ({ searchChange }) => {
   return (
     <>
       <div className="flex flex-col content-center">
@@ -10,7 +10,7 @@ export default () => {
             Search <span className="text-primary-200">Character</span>
           </h1>
           <div className="w-full ">
-            <SearchField />
+            <SearchField searchChange={searchChange} />
           </div>
         </div>
       </div>
