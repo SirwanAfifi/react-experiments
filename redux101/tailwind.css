@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.textA {
-  background-color: red;
+.card {
+  z-index: 0;
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, z-index 0s 0.2s ease,
+    -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease,
+    -webkit-transform 0.2s ease;
+}
+
+.card:hover {
+  z-index: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: box-shadow 0.2s ease, z-index 0s 0s ease,
+    -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease,
+    -webkit-transform 0.2s ease;
 }
