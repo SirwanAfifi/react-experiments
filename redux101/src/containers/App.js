@@ -3,29 +3,32 @@ import data from "../data.json";
 import Search from "../components/Search";
 import CardList from "../components/CardList.js";
 import { connect } from "react-redux";
-import { setSearchField } from "../store/actions";
+import { setSearchField, requestCharacters } from "../store/actions";
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchField
+    searchField: state.searchCharacter.searchField,
+    characters: state.requestCharacter.characters,
+    isPending: state.requestCharacter.isPending,
+    error: state.requestCharacter.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSearchChange: event => dispatch(setSearchField(event.target.value))
+    onSearchChange: event => dispatch(setSearchField(event.target.value)),
+    onRequestCharacters: () => dispatch(requestCharacters())
   };
 };
 
 const App = props => {
-  const [characters, setCharacters] = useState([]);
-  const { searchField, onSearchChange } = props;
+  const { searchField, onSearchChange, characters } = props;
   const filteredCharacters = characters.filter(character => {
     return character.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
   useEffect(() => {
-    setCharacters(data.results);
+    props.onRequestCharacters();
   }, []);
 
   return (
