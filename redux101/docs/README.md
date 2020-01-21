@@ -5,3 +5,21 @@ It simply listens for actions much like a tunnel that actions go through and dep
 ### Why middleware might be useful for us?
 
 - Logging
+
+```js
+yarn add redux-logger
+```
+
+#### How to use the logger?
+
+```js
+import { createStore, applyMiddleware } from "redux";
+import { createLogger } from "redux-logger";
+
+const logger = createLogger();
+const store = createStore(searchCharacter, applyMiddleware(logger));
+```
+
+Now when an action is dispatched we can see the logs in the console:
+
+<img src="./imgs/redux-logger.png" />
