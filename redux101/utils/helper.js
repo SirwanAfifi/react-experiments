@@ -9,3 +9,7 @@ const convertBlobToBase64 = blob =>
     };
     reader.readAsDataURL(blob);
   });
+
+//fetchAsBlob(`https://fonts.gstatic.com/s/roboto/v16/d-6IYplOFocCacKzxwXSOJBw1xU1rKptJj_0jans920.woff2`)
+//    .then(convertBlobToBase64)
+//    .then(console.log)
