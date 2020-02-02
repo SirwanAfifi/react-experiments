@@ -1,0 +1,13 @@
+$hover-color: green;
+
+.title {
+  font-size: 15px;
+  background: #eeee;
+  padding: 100px;
+  text-align: center;
+  transition: 100ms ease-in background;
+}
+
+.title:hover {
+  background: $hover-color;
+}
