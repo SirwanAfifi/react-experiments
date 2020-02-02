@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
+import Posts from "../components/Posts";
 
 const Home = () => (
   <div>
@@ -11,9 +12,7 @@ const Home = () => (
 
     <Nav />
 
-    <div className="hero">
-      <h1 className="title">About</h1>
-    </div>
+    <Posts />
   </div>
 );
 
