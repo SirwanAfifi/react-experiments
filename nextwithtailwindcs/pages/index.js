@@ -1,8 +1,9 @@
 import React from "react";
+import MyNav from "../components/MyNav";
 
 const Home = () => (
   <div className="container mx-auto">
-    <h1 className="text-6xl text-purple-600">Hello</h1>
+    <MyNav />
   </div>
 );
 
