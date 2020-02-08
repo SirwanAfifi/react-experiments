@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+.bg {
+  @apply bg-cover;
+}
+
 @tailwind utilities;
