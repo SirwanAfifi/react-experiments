@@ -3,12 +3,12 @@ import React, { useState } from "react";
 const MyNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="bg-gray-900">
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-900">
+    <header className="bg-gray-900 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
+      <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           <img className="h-8" src="./logo.png" alt="Logo" />
         </div>
-        <div>
+        <div className="sm:hidden">
           <button
             onClick={_ => setIsOpen(!isOpen)}
             type="button"
@@ -32,28 +32,30 @@ const MyNav = () => {
           </button>
         </div>
       </div>
-      {isOpen && (
-        <div className="px-2 pt-2 pb-4">
-          <a
-            href="#"
-            className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
-          >
-            About me
-          </a>
-          <a
-            href="#"
-            className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
-          >
-            Contact
-          </a>
-        </div>
-      )}
+      <nav
+        className={`${
+          isOpen ? "block" : "hidden"
+        } px-2 pt-2 pb-4 sm:flex sm:p-0`}
+      >
+        <a
+          href="#"
+          className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
+        >
+          Home
+        </a>
+        <a
+          href="#"
+          className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >
+          About me
+        </a>
+        <a
+          href="#"
+          className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >
+          Contact
+        </a>
+      </nav>
     </header>
   );
 };
