@@ -53,3 +53,39 @@ Stopwatch.prototype.reset = function () {
   this.running = false;
   this.duration = 0;
 };
+
+function mixin(target, ...sources) {
+  Object.assign(target.prototype, ...sources);
+}
+
+const canEat = {
+  eat: function () {
+    this.hunger--;
+    console.log("easting");
+  },
+};
+
+const canWalk = {
+  walk: function () {
+    console.log("walking");
+  },
+};
+
+const canSwim = {
+  swim: function () {
+    console.log("swim");
+  },
+};
+
+function Person() {}
+
+mixin(Person.prototype, canEat, canWalk);
+const person = new Person();
+console.log(person);
+
+function GoldFish() {}
+
+mixin(GoldFish.prototype, canEat, canSwim);
+
+const goldfish = new GoldFish();
+console.log(goldfish);
