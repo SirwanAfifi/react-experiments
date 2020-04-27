@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import path from "path";
+import fs from "fs";
 
 const app = express();
 app.use("/public", express.static(path.join(__dirname, "..", "public")));
@@ -10,7 +11,8 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/download", (req: Request, res: Response) => {
   const file = `public/uploads/users.csv`;
-  res.download(file); // Set disposition and send it.
+  const filestream = fs.createReadStream(file);
+  filestream.pipe(res);
 });
 
 export default app;
