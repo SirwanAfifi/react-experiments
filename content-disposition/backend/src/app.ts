@@ -1,13 +1,13 @@
 import express, { Request, Response, NextFunction } from "express";
 import path from "path";
 import fs from "fs";
+import cors from "cors";
 
 const app = express();
-app.use("/public", express.static(path.join(__dirname, "..", "public")));
 
-app.get("/", (req: Request, res: Response) => {
-  res.send({ name: "Sirwan" });
-});
+app.use(cors());
+
+app.use("/public", express.static(path.join(__dirname, "..", "public")));
 
 app.get("/download", (req: Request, res: Response) => {
   const file = `public/uploads/users.csv`;
