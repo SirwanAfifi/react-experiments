@@ -11,6 +11,10 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/download", (req: Request, res: Response) => {
   const file = `public/uploads/users.csv`;
+
+  res.setHeader("Content-disposition", "attachment; filename=" + "Sirwan.csv");
+  res.setHeader("Content-type", "text/csv");
+
   const filestream = fs.createReadStream(file);
   filestream.pipe(res);
 });
