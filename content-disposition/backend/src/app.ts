@@ -5,7 +5,7 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: ["localhost:8000", "*"] }));
 
 app.use("/public", express.static(path.join(__dirname, "..", "public")));
 
