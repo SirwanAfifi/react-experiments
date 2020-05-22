@@ -10,7 +10,13 @@ export default function App() {
   }, []);
   return (
     <Container>
-      <SearchInput type="text" placeholder="Search Users..." />
+      <SearchInput
+        type="text"
+        placeholder="Search Users..."
+        onChange={(e) =>
+          setUsers(users?.filter((x) => x.user === e.target.value))
+        }
+      />
       <UserContainer>
         {users &&
           users.map((user) => (
@@ -68,6 +74,7 @@ const UserBox = styled.div`
     margin: 0;
     height: 30px;
     padding: 10px;
+    font-weight: bold;
   }
   transition: all 0.2s ease-out;
   :hover {
