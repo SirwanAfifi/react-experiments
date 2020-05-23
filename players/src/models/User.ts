@@ -6,7 +6,7 @@ export enum JoinStatus {
   Left,
 }
 
-interface User {
+export interface User {
   user: string;
   joinStatus: JoinStatus;
   time: string;
